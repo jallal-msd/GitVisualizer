@@ -5,8 +5,14 @@ import (
 	"fmt"
 )
 
-func scan(path string) {
+func scan(folder string) {
 	fmt.Println("starting scan..")
+	repositories := RecursiveScan(folder)
+	fmt.Println("get dotfile")
+	filePath := getDotFilePath()
+	fmt.Println("add slice to file")
+	addNewSliceElementsToFile(filePath, repositories)
+	fmt.Printf("\n\nSuccessfully added \n\n")
 
 }
 func stats(path string) {
